@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Futterautomat</string>
+    <string name="vorauswahl">Wähle Menge aus</string>
+    <string-array name="entry">
+        <item>Small</item>
+        <item>Medium</item>
+        <item>Large</item>
+    </string-array>
+
+    <string-array name="liste">
+        <item>listitem1</item>
+        <item>listitem2</item>
+        <item>listitem3</item>
+    </string-array>
+</resources>
