@@ -23,7 +23,6 @@
         <activity android:name=".JetztFut"/>
         <activity android:name=".FutHistorie"/>
         <activity android:name=".Klappeoffen"/>
-
         <receiver android:name=".AlarmReceiver" android:enabled="true"/>
     </application>
 

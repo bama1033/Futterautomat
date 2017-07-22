@@ -10,6 +10,9 @@ import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.Toast;
 
+import java.text.DateFormat;
+import java.util.Date;
+
 /**
  * Created by martinbauer on 01.07.17.
  */
@@ -61,14 +64,16 @@ public class Klappeoffen extends AppCompatActivity {
                 myWebView.loadUrl("http://192.168.240.1/data/put/servo/2");
             }
         }, 3000);
-        insert("Alarm");
+        String currentDateTimeString = DateFormat.getDateTimeInstance().format(new Date());
+
+        insert(currentDateTimeString);
     }
     public void insert(String s) {
         myDB =openOrCreateDatabase("futhisdb",MODE_PRIVATE,null);
         myDB.execSQL("CREATE TABLE IF NOT EXISTS "
                 + "futhis"
                 + " (Field1 VARCHAR);");
-        myDB.execSQL("INSERT INTO futhis (Field1) VALUES ('" + s + "')");
+        myDB.execSQL("INSERT INTO futhis (Field1) VALUES ('" + "Es wurde am "+s +" per Alarm gefüttert"+ "')");
     }
 
 }

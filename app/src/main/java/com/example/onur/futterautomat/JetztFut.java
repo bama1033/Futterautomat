@@ -8,6 +8,9 @@ import android.os.Handler;
 import android.webkit.WebView;
 import android.widget.Toast;
 
+import java.text.DateFormat;
+import java.util.Date;
+
 /**
  * Created by Onur on 17.05.2017.
  */
@@ -57,15 +60,16 @@ public class JetztFut extends  AppCompatActivity {
             }
         }, 3000);
         Toast.makeText(getApplicationContext(), "Klappe wurde geöffnet", Toast.LENGTH_SHORT).show();
+        String currentDateTimeString = DateFormat.getDateTimeInstance().format(new Date());
 
-        insert("Klappe");
+        insert(currentDateTimeString);
     }
     public void insert(String s) {
         myDB =openOrCreateDatabase("futhisdb",MODE_PRIVATE,null);
         myDB.execSQL("CREATE TABLE IF NOT EXISTS "
                 + "futhis"
                 + " (Field1 VARCHAR);");
-        myDB.execSQL("INSERT INTO futhis (Field1) VALUES ('" + s + "')");
+        myDB.execSQL("INSERT INTO futhis (Field1) VALUES ('" + "Es wurde am "+s +" gefüttert"+ "')");
     }
 
 }

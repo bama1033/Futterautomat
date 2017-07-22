@@ -60,11 +60,7 @@ public class AutFut extends  AppCompatActivity{
                 PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(),1,intentalarm,PendingIntent.FLAG_UPDATE_CURRENT);
                 alarmManager.set(AlarmManager.RTC_WAKEUP,cal.getTimeInMillis(),pendingIntent);
                 Toast.makeText(getApplicationContext(), "Alarm wurde gesetzt", Toast.LENGTH_SHORT).show();
-
-
             }
         } );
     }
-
-
 }

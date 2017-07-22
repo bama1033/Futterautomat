@@ -24,19 +24,13 @@ public class FutHistorie extends  AppCompatActivity {
     ArrayList<String> listitems=new ArrayList<String>();
     ListView lv;
 
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         myDB =openOrCreateDatabase("futhisdb",MODE_PRIVATE,null);
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.futhistorie);
         lv=(ListView)findViewById(R.id.listView);
-
         setup();
-
         retrieve();
     }
 
